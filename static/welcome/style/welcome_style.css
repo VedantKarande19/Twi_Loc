@@ -1,0 +1,114 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Updated background */
+    color: #1DA1F2; /* Main text color */
+}
+
+nav {
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 15px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1DA1F2;
+}
+
+.main-content {
+    min-height: calc(100vh - 60px - 140px); /* Adjust based on actual nav and footer height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    opacity: 0; /* Initially hidden for animation */
+}
+
+.main-header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.main-header p {
+    font-size: 20px;
+    color: #555;
+}
+
+.footer-distributed {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+}
+
+.footer-distributed .mail {
+    text-decoration: none;
+    color: #9faab7;
+}
+
+.footer-distributed a:hover {
+    color: #66aee9;
+}
+
+@media (max-width: 600px) {
+    .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+}

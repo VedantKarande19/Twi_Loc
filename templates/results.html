@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #abd0f5;
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+        }
+
+        nav {
+            background-color: white;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            padding: 15px 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DA1F2;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 60px;
+            /* Margin to account for fixed nav */
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .no_decoration {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/home" class="brand-name">Twi-loc</a>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/input">Get Tweets</a></li>
+                <li><a href="/logout">Log-out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Tweets containing hashtag '#{{ hashtag }}':</h1>
+        {% if data.empty %}
+        <p>No tweets found containing hashtag '#{{ hashtag }}'.</p>
+        {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Username</th>
+                    <th>Tweet</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Latitude, Longitude</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in data.iterrows() %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row['username'] }}</td>
+                    <td>{{ row['tweet'] }}</td>
+                    <td>{{ row['date'] }}</td>
+                    <td>{{ row['geo'] }}</td>
+                    <td>
+                        <a href="https://www.google.com/maps/search/?api=1&query={{ row['Latitude, Longitude'] }}"
+                            target="_blank" class="no_decoration">{{ row['Latitude, Longitude'] }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        {% endif %}
+    </div>
+</body>
+
+</html>

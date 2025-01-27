@@ -1,0 +1,131 @@
+/* General styles for body and HTML */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* background-color: #c9d6ff; */
+    background-color: #abd0f5;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 87vh; /* Full viewport height */
+    padding-top: 60px; /* Add top padding to push the content below the navbar */
+}
+
+/* Navbar styling */
+nav {
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 15px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1DA1F2; 
+}
+
+/* Info box adjustments */
+.info-box {
+    margin-top: 80px; /* Increased top margin to ensure it's below the navbar */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px 20px;
+    width: 90%; /* Increased width for better visibility */
+    max-width: 1000px; /* Adjusted max width */
+    margin-bottom: 80px; /* Space before the footer */
+}
+
+/* Footer adjustments */
+.footer-distributed {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%;
+    font: bold 16px sans-serif;
+    padding: 30px 50px; /* Reduced padding for a smaller footer */
+    position: relative; /* Changed from fixed to relative */
+    bottom: 0;
+    left: 0;
+    font: bold 16px sans-serif;
+    padding: 30px 50px; /* Adequate padding */
+   
+}
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%; /* Ensuring equal distribution */
+}
+
+.footer-distributed .footer-links a {
+    color: #9faab7;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.mail{
+    text-decoration: none;
+    color:#9faab7;
+}
+.footer-distributed a:hover {
+    color: #66aee9; /* Light blue for hover for a bit of color */
+}
+
+.footer-distributed .footer-company-name {
+    color: #e2edfb;
+    font-size: 14px; /* Reduced font size */
+    font-weight: bold;
+    margin: 0; /* Adjust margins if necessary */
+}
+.footer-right :first-child{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 880px) {
+    .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+}       

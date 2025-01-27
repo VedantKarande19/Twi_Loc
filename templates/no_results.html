@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results</title>
+</head>
+<body>
+    <h1>No tweets found containing hashtag '#{{ hashtag }}'.</h1>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #abd0f5;
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color: white;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            padding: 15px 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1DA1F2;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/home" class="brand-name">Twi-loc</a>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/input">Get Tweets</a></li>
+                <li><a href="/logout">Log-out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>No tweets found containing hashtag '#{{ hashtag }}'.</h1>
+        <p>Try searching with a different hashtag.</p>
+    </div>
+</body>
+</html>
+
